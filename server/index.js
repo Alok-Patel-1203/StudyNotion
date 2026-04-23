@@ -9,7 +9,7 @@ const contactUsRoute = require("./routes/Contact");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const {cloudinaryConnect } = require("./config/cloudinary");
+const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 const os = require("os");
@@ -24,14 +24,14 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"http://localhost:3000",
-		credentials:true,
+		origin: ["http://localhost:3000", "https://study-notion-alok-patel.vercel.app"],
+		credentials: true,
 	})
 )
 
 app.use(
 	fileUpload({
-		useTempFiles:true,
+		useTempFiles: true,
 		tempFileDir: os.tmpdir(),
 	})
 )
@@ -53,8 +53,8 @@ app.use("/api/v1/chat", chatbotRoutes);
 
 app.get("/", (req, res) => {
 	return res.json({
-		success:true,
-		message:'Your server is up and running....'
+		success: true,
+		message: 'Your server is up and running....'
 	});
 });
 
