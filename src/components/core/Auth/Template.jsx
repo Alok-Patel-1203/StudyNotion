@@ -1,5 +1,6 @@
 import { FcGoogle } from "react-icons/fc"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 import frameImg from "../../../assets/Images/frame.png"
 import LoginForm from "./LoginForm"
@@ -25,6 +26,23 @@ function Template({ title, description1, description2, image, formType }) {
               </span>
             </p>
             {formType === "signup" ? <SignupForm /> : <LoginForm />}
+            <div className="mt-6 text-center text-richblack-100">
+              {formType === "signup" ? (
+                <p>
+                  Already have an account?{" "}
+                  <Link to="/login" className="font-medium text-yellow-50 hover:underline hover:text-yellow-100 transition-all duration-200">
+                    Log in
+                  </Link>
+                </p>
+              ) : (
+                <p>
+                  Don't have an account?{" "}
+                  <Link to="/signup" className="font-medium text-yellow-50 hover:underline hover:text-yellow-100 transition-all duration-200">
+                    Sign up
+                  </Link>
+                </p>
+              )}
+            </div>
           </div>
           <div className="relative mx-auto w-11/12 max-w-[450px] md:mx-0">
             <div className="absolute -inset-2 bg-gradient-to-tr from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] rounded-3xl blur-2xl opacity-20 animate-[pulse_3s_infinite] hidden md:block"></div>
