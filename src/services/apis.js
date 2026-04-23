@@ -1,4 +1,6 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:4000/api/v1"
+// Override BASE_URL directly here to force React's hot-reload to use your local server
+// without needing you to stop and restart your terminal!
+const BASE_URL = "http://localhost:4000/api/v1";
 
 // AUTH ENDPOINTS
 export const endpoints = {
@@ -69,4 +71,9 @@ export const settingsEndpoints = {
   UPDATE_PROFILE_API: BASE_URL + "/profile/updateProfile",
   CHANGE_PASSWORD_API: BASE_URL + "/auth/changepassword",
   DELETE_PROFILE_API: BASE_URL + "/profile/deleteProfile",
+}
+
+// CHATBOT ENDPOINTS
+export const chatEndpoints = {
+  VIDEO_CHAT_API: BASE_URL + "/chat/video",
 }

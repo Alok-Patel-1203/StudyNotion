@@ -45,6 +45,10 @@ app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 app.use("/api/v1/reach", contactUsRoute);
 
+// Chatbot route
+const chatbotRoutes = require("./routes/Chatbot");
+app.use("/api/v1/chat", chatbotRoutes);
+
 //def route
 
 app.get("/", (req, res) => {

@@ -12,6 +12,8 @@ import {
   setTotalNoOfLectures,
 } from "../slices/viewCourseSlice"
 
+import Chatbot from "../components/common/Chatbot"
+
 export default function ViewCourse() {
   const { courseId } = useParams()
   const { token } = useSelector((state) => state.auth)
@@ -45,6 +47,7 @@ export default function ViewCourse() {
         </div>
       </div>
       {reviewModal && <CourseReviewModal setReviewModal={setReviewModal} />}
+      <Chatbot />
     </>
   )
 }
