@@ -20,6 +20,8 @@ export default function CourseReviewModal({ setReviewModal }) {
   } = useForm()
 
   useEffect(() => {
+    register("courseExperience", { required: true })
+    register("courseRating", { required: true, min: 1 })
     setValue("courseExperience", "")
     setValue("courseRating", 0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
