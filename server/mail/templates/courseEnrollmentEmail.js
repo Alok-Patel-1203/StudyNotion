@@ -1,5 +1,5 @@
 exports.courseEnrollmentEmail = (courseName, name) => {
-    return \`<!DOCTYPE html>
+    return `<!DOCTYPE html>
     <html>
     <head>
         <meta charset="UTF-8">
@@ -24,9 +24,9 @@ exports.courseEnrollmentEmail = (courseName, name) => {
             </div>
             <div class="message">Enrollment Successful</div>
             <div class="body">
-                <p>Congratulations <strong>\${name}</strong>!</p>
+                <p>Congratulations <strong>${name}</strong>!</p>
                 <p>You have successfully secured your spot in the following course:</p>
-                <h2>\${courseName}</h2>
+                <h2>${courseName}</h2>
                 <p>Your learning dashboard is now fully unlocked. Get ready to build your future, one line of code at a time.</p>
                 <br/>
                 <a class="cta" href="https://studynotion-edtech-project.vercel.app/dashboard/enrolled-courses">Access Dashboard</a>
@@ -34,5 +34,5 @@ exports.courseEnrollmentEmail = (courseName, name) => {
             <div class="support">If you have any questions or need assistance, reach us at <a href="mailto:info@studynotion.com">info@studynotion.com</a>.</div>
         </div>
     </body>
-    </html>\`;
+    </html>`;
   };

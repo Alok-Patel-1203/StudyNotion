@@ -1,5 +1,5 @@
 exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
-    return \`<!DOCTYPE html>
+    return `<!DOCTYPE html>
       <html>
       <head>
           <meta charset="UTF-8">
@@ -29,26 +29,26 @@ exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
               </div>
               <div class="message">Payment Receipt</div>
               <div class="body">
-                  <p>Hello <strong>\${name}</strong>,</p>
+                  <p>Hello <strong>${name}</strong>,</p>
                   <p>Thank you for choosing StudyNotion! Your transaction was completely successful. Below are your securely generated receipt details.</p>
                   
                   <div class="receipt-box">
                       <div class="data-row">
                           <span class="data-label">Payment ID</span>
-                          <span class="data-value">\${paymentId}</span>
+                          <span class="data-value">${paymentId}</span>
                       </div>
                       <div class="data-row">
                           <span class="data-label">Order ID</span>
-                          <span class="data-value">\${orderId}</span>
+                          <span class="data-value">${orderId}</span>
                       </div>
                       <div class="amount-row">
                           <span class="amount-label">Total Paid</span>
-                          <span class="amount-value">₹\${amount}</span>
+                          <span class="amount-value">₹${amount}</span>
                       </div>
                   </div>
               </div>
               <div class="support">If you require billing assistance or an invoice, please contact <a href="mailto:billing@studynotion.com">billing@studynotion.com</a>.</div>
           </div>
       </body>
-      </html>\`
+      </html>`
 }

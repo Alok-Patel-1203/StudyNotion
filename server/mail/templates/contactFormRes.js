@@ -57,5 +57,5 @@ exports.contactUsEmail = (
             <div class="support">If you need immediate assistance, reply directly to this email or reach us at <a href="mailto:info@studynotion.com">info@studynotion.com</a>.</div>
         </div>
     </body>
-    </html>\`
-  }
+    </html>`;
+  };
