@@ -1,6 +1,5 @@
-// Override BASE_URL directly here to force React's hot-reload to use your local server
-// without needing you to stop and restart your terminal!
-const BASE_URL = "http://localhost:4000/api/v1";
+// Connects to local server during testing, or live server when deployed on Vercel
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:4000/api/v1";
 
 // AUTH ENDPOINTS
 export const endpoints = {

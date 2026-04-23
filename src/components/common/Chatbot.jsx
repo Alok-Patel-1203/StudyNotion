@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FiMessageCircle, FiX, FiSend, FiLoader } from "react-icons/fi";
+import { FiMessageCircle, FiX, FiSend } from "react-icons/fi";
+import { chatEndpoints } from "../../services/apis";
 import ReactMarkdown from "react-markdown";
 
 const Chatbot = () => {
@@ -33,8 +34,8 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      // Connect to your Express backend
-      const response = await fetch("http://localhost:4000/api/v1/chat/video", {
+      // Connect to your Express backend dynamically
+      const response = await fetch(chatEndpoints.VIDEO_CHAT_API, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -104,8 +105,9 @@ const Chatbot = () => {
                       msg.text
                     ) : (
                       <ReactMarkdown
-                        className="markdown-body text-sm font-inter space-y-2 prose-invert max-w-none"
+                        className="markdown-body text-sm font-inter space-y-2 whitespace-pre-wrap prose-invert max-w-none"
                         components={{
+                          strong: ({ node, ...props }) => <strong className="font-bold text-yellow-50" {...props} />,
                           p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
                           ul: ({ node, ...props }) => <ul className="list-disc ml-5 mb-2" {...props} />,
                           ol: ({ node, ...props }) => <ol className="list-decimal ml-5 mb-2" {...props} />,

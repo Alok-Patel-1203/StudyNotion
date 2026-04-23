@@ -9,7 +9,6 @@ import { BigPlayButton, Player } from "video-react"
 import { markLectureAsComplete } from "../../../services/operations/courseDetailsAPI"
 import { updateCompletedLectures } from "../../../slices/viewCourseSlice"
 import IconBtn from "../../common/IconBtn"
-import VideoChatbot from "./VideoChatbot"
 
 const VideoDetails = () => {
   const { courseId, sectionId, subSectionId } = useParams()

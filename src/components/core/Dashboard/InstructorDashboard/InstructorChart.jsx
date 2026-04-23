@@ -44,7 +44,7 @@ export default function InstructorChart({ courses }) {
 
   // Options for the chart
   const options = {
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
   }
 
   return (
@@ -54,27 +54,25 @@ export default function InstructorChart({ courses }) {
         {/* Button to switch to the "students" chart */}
         <button
           onClick={() => setCurrChart("students")}
-          className={`rounded-sm p-1 px-3 transition-all duration-200 ${
-            currChart === "students"
+          className={`rounded-sm p-1 px-3 transition-all duration-200 ${currChart === "students"
               ? "bg-richblack-700 text-yellow-50"
               : "text-yellow-400"
-          }`}
+            }`}
         >
           Students
         </button>
         {/* Button to switch to the "income" chart */}
         <button
           onClick={() => setCurrChart("income")}
-          className={`rounded-sm p-1 px-3 transition-all duration-200 ${
-            currChart === "income"
+          className={`rounded-sm p-1 px-3 transition-all duration-200 ${currChart === "income"
               ? "bg-richblack-700 text-yellow-50"
               : "text-yellow-400"
-          }`}
+            }`}
         >
           Income
         </button>
       </div>
-      <div className="relative mx-auto aspect-square h-full w-full">
+      <div className="relative mx-auto flex h-full w-full justify-center border-richblack-700 max-w-[350px] max-h-[350px] pb-5">
         {/* Render the Pie chart based on the selected chart */}
         <Pie
           data={currChart === "students" ? chartDataStudents : chartIncomeData}
