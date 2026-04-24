@@ -76,3 +76,11 @@ export const settingsEndpoints = {
 export const chatEndpoints = {
   VIDEO_CHAT_API: BASE_URL + "/chat/video",
 }
+
+// ADMIN ENDPOINTS
+export const adminEndpoints = {
+  GET_ADMIN_DASHBOARD_API: BASE_URL + "/admin/dashboard",
+  GET_ALL_INSTRUCTORS_API: BASE_URL + "/admin/instructors",
+  GET_ALL_STUDENTS_API: BASE_URL + "/admin/students",
+  GET_ALL_COURSES_ADMIN_API: BASE_URL + "/admin/courses",
+}

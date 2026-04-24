@@ -28,6 +28,11 @@ import CourseDetails from "./pages/CourseDetails";
 import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
+import AdminDashboard from "./components/core/Dashboard/Admin/AdminDashboard";
+import Insights from "./components/core/Dashboard/Admin/Insights";
+import InstructorManagement from "./components/core/Dashboard/Admin/InstructorManagement";
+import UserManagement from "./components/core/Dashboard/Admin/UserManagement";
+import CourseManagement from "./components/core/Dashboard/Admin/CourseManagement";
 
 function App() {
 
@@ -128,6 +133,18 @@ function App() {
           <Route path="dashboard/my-courses" element={<MyCourses />} />
           <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
           
+          </>
+        )
+      }
+
+      {
+        user?.accountType === ACCOUNT_TYPE.ADMIN && (
+          <>
+          <Route path="dashboard/admin" element={<AdminDashboard />} />
+          <Route path="dashboard/insights" element={<Insights />} />
+          <Route path="dashboard/instructor-management" element={<InstructorManagement />} />
+          <Route path="dashboard/user-management" element={<UserManagement />} />
+          <Route path="dashboard/course-management" element={<CourseManagement />} />
           </>
         )
       }

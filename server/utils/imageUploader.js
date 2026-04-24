@@ -12,7 +12,7 @@ exports.uploadImageToCloudinary  = async (file, folder, height, quality) => {
         options.quality = quality;
     }
     const isVideo = file?.mimetype?.startsWith("video/")
-    options.resource_type = isVideo ? "video" : "image"
+    options.resource_type = "auto"
 
     try {
         // Use chunked upload only for large videos; normal upload is faster and more stable for small files.

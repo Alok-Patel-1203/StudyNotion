@@ -191,14 +191,14 @@ const VideoDetails = () => {
         />
       ) : (
         currentVideoUrl ? (
-          <Player
-            ref={playerRef}
-            aspectRatio="16:9"
-            playsInline
-            onEnded={() => setVideoEnded(true)}
-            src={currentVideoUrl}
-          >
-            <BigPlayButton position="center" />
+          <div className="relative">
+            <video
+              ref={playerRef}
+              className="w-full aspect-video rounded-md"
+              controls
+              onEnded={() => setVideoEnded(true)}
+              src={currentVideoUrl}
+            />
             {/* Render When Video Ends */}
             {videoEnded && (
               <div
@@ -206,7 +206,7 @@ const VideoDetails = () => {
                   backgroundImage:
                     "linear-gradient(to top, rgb(0, 0, 0), rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0.1)",
                 }}
-                className="full absolute inset-0 z-[100] grid h-full place-content-center font-inter"
+                className="full absolute inset-0 z-[100] grid h-full place-content-center font-inter rounded-md"
               >
                 {!completedLectures.includes(subSectionId) && (
                   <IconBtn
@@ -221,7 +221,8 @@ const VideoDetails = () => {
                   onclick={() => {
                     if (playerRef?.current) {
                       // set the current time of the video to 0
-                      playerRef?.current?.seek(0)
+                      playerRef.current.currentTime = 0
+                      playerRef.current.play()
                       setVideoEnded(false)
                     }
                   }}
@@ -250,7 +251,7 @@ const VideoDetails = () => {
                 </div>
               </div>
             )}
-          </Player>
+          </div>
         ) : (
           <div className="grid aspect-video w-full place-items-center rounded-md bg-richblack-800 text-center text-richblack-50">
             <p>

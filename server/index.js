@@ -38,12 +38,15 @@ app.use(
 //cloudinary connection
 cloudinaryConnect();
 
+const adminRoutes = require("./routes/Admin");
+
 //routes
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 app.use("/api/v1/reach", contactUsRoute);
+app.use("/api/v1/admin", adminRoutes);
 
 // Chatbot route
 const chatbotRoutes = require("./routes/Chatbot");
@@ -62,3 +65,4 @@ app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
 })
 
+module.exports = app;
